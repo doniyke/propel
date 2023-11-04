@@ -5,12 +5,13 @@
 
     import UserProfile from '../../profile/UserProfile.vue'; // This cannot be a mixin because it is not repeated
 </script>
+
 <template>
     <div>
         <NavHeader />
-        <div class="d-flex">
-            <div>
-                <SideNav />
+        <div>
+            <div class="hide-sm">
+                <SideNav :show-nav=true />
             </div>
             <div>
                 <UserProfile />

@@ -1,7 +1,18 @@
+<script setup>
+    import { ref } from 'vue';
+
+    import SideNav from './SideNav.vue';
+
+    const navStatus = ref(false);
+
+    const toggleNav = () => {
+        navStatus.value = !navStatus.value;
+    }
+</script>
 <template>
     <div>
         <header>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between" @click="toggleNav">
                 <div class="hamburger">
                    <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
@@ -101,6 +112,7 @@
                 </div>
             </div>
         </header>
+        <SideNav :show-nav=navStatus />
     </div>
 </template>
 
