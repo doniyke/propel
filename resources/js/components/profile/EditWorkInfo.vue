@@ -8,17 +8,7 @@ const props = defineProps({
     }
 })
 
-const userProfileInfo = reactive({
-    employment_status:  props.userProfileInfo.employment_status,
-    primary_role: props.userProfileInfo.primary_role,
-    portfolio: props.userProfileInfo.portfolio,
-    preferred_work: props.userProfileInfo.preferred_work,
-    relocation_abroad: props.userProfileInfo.relocation_abroad,
-    years_of_experience: props.userProfileInfo.years_of_experience,
-    preferred_salary: props.userProfileInfo.preferred_salary,
-    secondary_roles: props.userProfileInfo.secondary_roles,
-    notice_period: props.userProfileInfo.notice_period
-})
+const userProfileInfo = reactive(props.userProfileInfo);
 
 let userSecondaryRole = ref('Select up to three(3)');
 let userPreferredWork = ref('Select up to two(2)');
@@ -28,34 +18,32 @@ let preferredWorkArrays = userProfileInfo.preferred_work;
 const addToArray = (array) => {
     if (array === 'secondary_roles') {
         secondaryRolesArrays.push(userSecondaryRole.value);
-        secondaryRolesArrays.slice(-3);
-    }
-    if (array === 'preferred_work') {
+        secondaryRolesArrays = secondaryRolesArrays.slice(-3);
+    } else if (array === 'preferred_work') {
         preferredWorkArrays.push(userPreferredWork.value);
-        secondaryRolesArrays.slice(-2);
+        preferredWorkArrays = preferredWorkArrays.slice(-2);
     }
 }
 
 const removeFromArray = (index, array) => {
-    if (array === 'secondary_roles') { 
+    if (array === 'secondary_roles') {
         secondaryRolesArrays.splice(index, 1);
-    }
-    if (array === 'preferred_work') { 
+    } else if (array === 'preferred_work') {
         preferredWorkArrays.splice(index, 1);
     }
 }
 
-
-
 const emit = defineEmits(['save-button-clicked', 'cancel-button-clicked']);
 
 const saveButtonClicked = () => {
-  emit('save-button-clicked', userProfileInfo)
+    emit('save-button-clicked', userProfileInfo)
 }
+
 const cancelButtonClicked = () => {
-  emit('cancel-button-clicked')
+    emit('cancel-button-clicked')
 }
 </script>
+
 
 <template>
     <div class="edit-info">

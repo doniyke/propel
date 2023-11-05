@@ -1,20 +1,21 @@
 <script setup>
-    import { ref, defineEmits } from 'vue';
-    const showBtn = ref(false)
-    const emit = defineEmits(['edit-button-clicked']);
+import { ref, defineEmits } from 'vue';
 
-    const data = {
-        title: 'Test Project Title 1',
-        description: 'This is the brief project description.',
-        url: 'https://github',
-        image: 'link to imag',
-    }
+const showBtn = ref(false);
+const emit = defineEmits(['edit-button-clicked']);
 
+const data = {
+    title: 'Test Project Title 1',
+    description: 'This is the brief project description.',
+    url: 'https://github',
+    image: 'link to image',
+};
 
-    const editButtonClicked = () => {
-        emit('edit-button-clicked', data);
-    }
+const editButtonClicked = () => {
+    emit('edit-button-clicked', data);
+};
 </script>
+
 <template>
     <div class="col-md-6" @mouseenter="showBtn = true" @mouseleave="showBtn = false">
         <div class="project">

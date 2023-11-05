@@ -1,50 +1,40 @@
 <script setup>
-    import EducationData from "./EducationData.vue"
-    import { ref, reactive } from 'vue';
-    const modalBtn = ref(null);
-    let modalType = ref('add');
-    const userWorkExperience = reactive({
-        school: null,
-        degree: null,
-        field: null,
-        location: null,
-        state: null,
-        startDate: null,
-        endDate: null,
-        accomplisments: null
-    })
+import EducationData from "./EducationData.vue"
+import { ref, reactive } from 'vue';
 
-    const triggerMOdal = () => {
-        modalBtn.value.click();
-    };
+const modalBtn = ref(null);
+const modalType = ref('add');
+const userWorkExperience = reactive({
+    school: null,
+    degree: null,
+    field: null,
+    location: null,
+    state: null,
+    startDate: null,
+    endDate: null,
+    accomplisments: null
+})
 
-    const resetForm = () => {
-        userWorkExperience.school = null;
-        userWorkExperience.degree = null;
-        userWorkExperience.field = null;
-        userWorkExperience.location = null;
-        userWorkExperience.state = null;
-        userWorkExperience.startDate = null;
-        userWorkExperience.endDate = null;
-        userWorkExperience.accomplisments = null;
-        modalType.value = 'add';
+const triggerModal = () => {
+    modalBtn.value.click();
+};
+
+const resetForm = () => {
+    for (const key in userWorkExperience) {
+        userWorkExperience[key] = null;
     }
+    modalType.value = 'add';
+}
 
-    const handleEditButtonClicked = (data) => {
-        userWorkExperience.school = data.school;
-        userWorkExperience.degree = data.degree;
-        userWorkExperience.field = data.field;
-        userWorkExperience.location = data.location;
-        userWorkExperience.state = data.state;
-        userWorkExperience.startDate = data.startDate;
-        userWorkExperience.endDate = data.endDate;
-        userWorkExperience.accomplisments = data.accomplisments;
-        modalType.value = 'edit';
-        triggerMOdal()
+const handleEditButtonClicked = (data) => {
+    for (const key in userWorkExperience) {
+        userWorkExperience[key] = data[key];
     }
-    
-    
+    modalType.value = 'edit';
+    triggerModal();
+}
 </script>
+
 <template>
     <div class="personal-info">
         <div class="d-flex justify-content-between">

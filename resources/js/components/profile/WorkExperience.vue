@@ -1,53 +1,42 @@
 <script setup>
-    import WorkData from './WorkData.vue';
-    import { ref, reactive } from 'vue';
-    const modalBtn = ref(null);
-    let modalType = ref('add');
+import WorkData from './WorkData.vue'
+import { ref, reactive } from 'vue';
 
-    const userWorkExperience = reactive({
-        jobTitle: null,
-        companyName: null,
-        companyWebsite: null,
-        location: null,
-        state: null,
-        startDate: null,
-        endDate: null,
-        currentlyWorkThere: null,
-        accomplisments: null
-    })
+const modalBtn = ref(null);
+let modalType = ref('add');
 
-    const triggerMOdal = () => {
-        modalBtn.value.click();
-    };
+const userWorkExperience = reactive({
+    jobTitle: null,
+    companyName: null,
+    companyWebsite: null,
+    location: null,
+    state: null,
+    startDate: null,
+    endDate: null,
+    currentlyWorkThere: null,
+    accomplisments: null
+});
 
-    const resetForm = () => {
-        userWorkExperience.jobTitle = null;
-        userWorkExperience.companyName = null;
-        userWorkExperience.companyWebsite = null;
-        userWorkExperience.location = null;
-        userWorkExperience.state = null;
-        userWorkExperience.startDate = null;
-        userWorkExperience.endDate = null;
-        userWorkExperience.currentlyWorkThere = null;
-        userWorkExperience.accomplisments = null;
-        modalType.value = 'add';
+const triggerModal = () => {
+    modalBtn.value.click();
+};
+
+const resetForm = () => {
+    for (const key in userWorkExperience) {
+        userWorkExperience[key] = null;
     }
+    modalType.value = 'add';
+};
 
-    const handleEditButtonClicked = (data) => {
-        userWorkExperience.jobTitle = data.jobTitle;
-        userWorkExperience.companyName = data.companyName;
-        userWorkExperience.companyWebsite = data.companyWebsite;
-        userWorkExperience.location = data.location;
-        userWorkExperience.state = data.state;
-        userWorkExperience.startDate = data.startDate;
-        userWorkExperience.endDate = data.endDate;
-        userWorkExperience.currentlyWorkThere = data.currentlyWorkThere;
-        userWorkExperience.accomplisments = data.accomplisments;
-        modalType.value = 'edit';
-        triggerMOdal()
+const handleEditButtonClicked = (data) => {
+    for (const key in userWorkExperience) {
+        userWorkExperience[key] = data[key];
     }
-    
+    modalType.value = 'edit';
+    triggerModal();
+};
 </script>
+
 <template>
     <div class="work-holder">
         <div class="personal-info">

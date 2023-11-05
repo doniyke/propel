@@ -1,36 +1,35 @@
 <script setup>
-import Project from "./Project.vue"
+import Project from './Project.vue';
 import { ref, reactive } from 'vue';
-    const modalBtn = ref(null);
-    let modalType = ref('add');
-    const userWorkExperience = reactive({
-        title: null,
-        description: null,
-        url: null,
-        image: null,
-    })
 
-    const triggerMOdal = () => {
-        modalBtn.value.click();
-    };
+const modalBtn = ref(null);
+const modalType = ref('add');
 
-    const resetForm = () => {
-        userWorkExperience.title = null;
-        userWorkExperience.description = null;
-        userWorkExperience.url = null;
-        userWorkExperience.image = null;
-        modalType.value = 'add';
-    }
+const userWorkExperience = reactive({
+    title: null,
+    description: null,
+    url: null,
+    image: null,
+});
 
-    const handleEditButtonClicked = (data) => {
-        userWorkExperience.title = data.title;
-        userWorkExperience.description = data.description;
-        userWorkExperience.url = data.url;
-        userWorkExperience.image = data.image;
-        modalType.value = 'edit';
-        triggerMOdal()
-    }
+const triggerModal = () => modalBtn.value.click();
+
+const resetForm = () => {
+    Object.keys(userWorkExperience).forEach((key) => {
+        userWorkExperience[key] = null;
+    });
+    modalType.value = 'add';
+};
+
+const handleEditButtonClicked = (data) => {
+    Object.keys(userWorkExperience).forEach((key) => {
+        userWorkExperience[key] = data[key];
+    });
+    modalType.value = 'edit';
+    triggerModal();
+};
 </script>
+
 <template>
     <div class="personal-info">
         <div class="d-flex justify-content-between">

@@ -1,49 +1,53 @@
 <script setup>
-    import {ref, reactive} from 'vue'
-    import EditSkills from "./EditSkills.vue"
-    import SkillsFormHead from "./SkillsFormHead.vue"
-    const tools = reactive([
-        {tool: "Kubernetes", years: "7 years"},
-        {tool: "Jenkins", years: "3 years"},
-        {tool: "Google Cloud", years: "8 years"},
-        {tool: "Azure", years: "5 years"},
-        {tool: "Ansible", years: "8 years"},
-        {tool: "Prometheus", years: "4 years"},
-        {tool: "Terraform", years: "2 years"},
-        {tool: "Confluence", years: "7 years"},
-        {tool: "Docker", years: "6 years"},
-        {tool: "Jira", years: "4 years"},
-        {tool: "AWS", years: "3 years"}
-    ])
-    const industries = reactive([
-        {tool: "Infrastructure as Code (IaC)", years: "7 years"},
-        {tool: "Cloud Computing", years: "3 years"},
-        {tool: "Automation", years: "8 years"},
-        {tool: "Version Control", years: "5 years"},
-        {tool: "Containerization", years: "8 years"},
-        {tool: "DNS Management", years: "4 years"},
-        {tool: "CI/CD", years: "2 years"},
-        {tool: "Orchestration", years: "7 years"},
-        {tool: "Monitoring and Observability", years: "6 years"},
-        {tool: "Agile", years: "4 years"},
-        {tool: "Scripting", years: "3 years"}
-    ])
+import { ref, reactive } from 'vue';
+import EditSkills from './EditSkills.vue';
+import SkillsFormHead from './SkillsFormHead.vue';
 
-    const Interpersonal = reactive([
-        {tool: "Communication", stars: 2},
-        {tool: "Adaptability", stars: 3},
-        {tool: "Conflict Resolution", stars: 3},
-        {tool: "Team Collaboration", stars: 3},
-        {tool: "Empathy", stars: 3},
-        {tool: "Critical Thinking", stars: 3},
-        {tool: "Negotiation", stars: 3},
-        {tool: "Leadership", stars: 3},
-        {tool: "Mentoring", stars: 3},
-        {tool: "Problem-Solving", stars: 3},
-        {tool: "Decision-Making", stars: 3}
-    ])
-    const currentTab = ref(1)
+const tools = reactive([
+    { tool: 'Kubernetes', years: '7 years' },
+    { tool: 'Jenkins', years: '3 years' },
+    { tool: 'Google Cloud', years: '8 years' },
+    { tool: 'Azure', years: '5 years' },
+    { tool: 'Ansible', years: '8 years' },
+    { tool: 'Prometheus', years: '4 years' },
+    { tool: 'Terraform', years: '2 years' },
+    { tool: 'Confluence', years: '7 years' },
+    { tool: 'Docker', years: '6 years' },
+    { tool: 'Jira', years: '4 years' },
+    { tool: 'AWS', years: '3 years' },
+]);
+
+const industries = reactive([
+    { tool: 'Infrastructure as Code (IaC)', years: '7 years' },
+    { tool: 'Cloud Computing', years: '3 years' },
+    { tool: 'Automation', years: '8 years' },
+    { tool: 'Version Control', years: '5 years' },
+    { tool: 'Containerization', years: '8 years' },
+    { tool: 'DNS Management', years: '4 years' },
+    { tool: 'CI/CD', years: '2 years' },
+    { tool: 'Orchestration', years: '7 years' },
+    { tool: 'Monitoring and Observability', years: '6 years' },
+    { tool: 'Agile', years: '4 years' },
+    { tool: 'Scripting', years: '3 years' },
+]);
+
+const Interpersonal = reactive([
+    { tool: 'Communication', stars: 2 },
+    { tool: 'Adaptability', stars: 3 },
+    { tool: 'Conflict Resolution', stars: 3 },
+    { tool: 'Team Collaboration', stars: 3 },
+    { tool: 'Empathy', stars: 3 },
+    { tool: 'Critical Thinking', stars: 3 },
+    { tool: 'Negotiation', stars: 3 },
+    { tool: 'Leadership', stars: 3 },
+    { tool: 'Mentoring', stars: 3 },
+    { tool: 'Problem-Solving', stars: 3 },
+    { tool: 'Decision-Making', stars: 3 },
+]);
+
+const currentTab = ref(1);
 </script>
+
 <template>
     <div class="personal-info">
         <div class="d-flex justify-content-between">

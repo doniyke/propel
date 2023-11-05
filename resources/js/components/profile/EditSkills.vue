@@ -17,18 +17,7 @@
                 <div class="pe-1">
                     <select class="form-control" :value="tool.years">
                         <option value="" disabled selected>Select Years</option>
-                        <option value="1 year">1 year</option>
-                        <option value="2 years">2 years</option>
-                        <option value="3 years">3 years</option>
-                        <option value="4 years">4 years</option>
-                        <option value="5 years">5 years</option>
-                        <option value="6 years">6 years</option>
-                        <option value="7 years">7 years</option>
-                        <option value="8 years">8 years</option>
-                        <option value="9 years">9 years</option>
-                        <option value="10 years">10 years</option>
-                        <option value="11 years">11 years</option>
-                        <option value="12 years">12 years</option>
+                        <option v-for="year in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" :value="year + ' years'">{{ year }} years</option>
                     </select>
                 </div>
                 <div>

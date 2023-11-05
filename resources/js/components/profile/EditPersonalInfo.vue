@@ -1,32 +1,19 @@
 <script setup>
-import { ref, defineProps, reactive } from 'vue';
+import { ref, defineProps, defineEmits } from 'vue';
 
-const props = defineProps({
-    userProfileInfo: {
-        type: Object,
-        required: true
-    }
-})
+const { userProfileInfo: propsUserProfileInfo } = defineProps(['userProfileInfo']);
 
-const userProfileInfo = reactive({
-    fullname:  props.userProfileInfo.fullname,
-    email: props.userProfileInfo.email,
-    gender: props.userProfileInfo.gender,
-    country: props.userProfileInfo.country,
-    phone: props.userProfileInfo.phone,
-    about: props.userProfileInfo.about
-})
-
-
+const userProfileInfo = ref({ ...propsUserProfileInfo });
 
 const emit = defineEmits(['save-button-clicked', 'cancel-button-clicked']);
 
 const saveButtonClicked = () => {
-  emit('save-button-clicked', userProfileInfo)
-}
+  emit('save-button-clicked', userProfileInfo);
+};
+
 const cancelButtonClicked = () => {
-  emit('cancel-button-clicked')
-}
+  emit('cancel-button-clicked');
+};
 </script>
 
 <template>
