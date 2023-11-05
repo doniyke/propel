@@ -1,88 +1,39 @@
+<script setup>
+    import DefaultPersonalInfo from './DefaultPersonalInfo.vue';
+    import EditPersonalInfo from './EditPersonalInfo.vue';
+
+    import { ref, reactive } from 'vue';
+
+    let showEditForm  = ref(false)
+
+    const userProfileInfo = reactive({
+        fullname: "Beth Amarachi",
+        email: "bethamarachi@gmail.com",
+        gender: "Female",
+        country: "Nigeria",
+        phone: "+234-9283924450",
+        about: "I am a DevOps and Big Data engineer with 4 years experience and in-depth knowledge of R, Python, PowerBI and Tableau. I have an Msc. in Statistics and a big part of my career has been spent working at Jumia Nigeria, working as a BI Analyst and later a Commercial Planning Analyst."
+    })
+
+    const handleEditButtonClicked = () => {
+        showEditForm.value = true;
+    }
+
+    const handleSaveButtonClicked = (data) => {
+        userProfileInfo.fullname = data.fullname;
+        userProfileInfo.email = data.email;
+        userProfileInfo.gender = data.gender;
+        userProfileInfo.country = data.country;
+        userProfileInfo.phone = data.phone;
+        userProfileInfo.about = data.about;
+        showEditForm.value = false;
+    }
+
+    const handleCancelButtonClicked = () => {
+        showEditForm.value = false
+    }
+</script>
 <template>
-    <div class="personal-info">
-        <div class="d-flex justify-content-between">
-            <div>
-                <h5 class="title">
-                    Personal Info
-                </h5>
-            </div>
-            <div>
-                <button class="btn-edit">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M2.32094 17.8311L2.32056 17.8312C2.2998 17.8362 2.2781 17.8358 2.25755 17.83C2.237 17.8242 2.21828 17.8132 2.20317 17.7981C2.18806 17.783 2.17707 17.7643 2.17124 17.7437C2.16542 17.7232 2.16495 17.7015 2.1699 17.6807L3.08234 13.846C3.08236 13.8459 3.08237 13.8458 3.08239 13.8458C3.17197 13.4701 3.36396 13.1267 3.63702 12.8536C3.63702 12.8536 3.63703 12.8536 3.63703 12.8536L13.597 2.89359C14.0624 2.4282 14.6936 2.16675 15.3518 2.16675C15.9844 2.16675 16.5922 2.40831 17.0517 2.84036L17.1066 2.89525C17.572 3.36065 17.8334 3.99187 17.8334 4.65003C17.8334 5.3082 17.572 5.93942 17.1066 6.40481L7.14831 16.3631C7.14829 16.3631 7.14827 16.3631 7.14825 16.3631C6.87494 16.6363 6.53118 16.8283 6.15524 16.9178L6.1551 16.9178L2.32094 17.8311ZM13.7732 3.06981L13.6268 3.21626V3.21693L13.0301 3.81295L13.0001 3.84289V3.84284L12.9581 3.8849L12.6761 4.16656L12.6763 4.16674L12.1466 4.6965L3.81408 13.0298C3.81407 13.0298 3.81407 13.0298 3.81406 13.0298C3.57387 13.27 3.40439 13.5722 3.32539 13.9043C3.32538 13.9043 3.32538 13.9043 3.32538 13.9043L2.64789 16.7509L2.45975 17.5414L3.2502 17.3531L6.09687 16.6748L6.09708 16.6747C6.42716 16.5959 6.72953 16.4277 6.97035 16.1869L15.3037 7.85359L15.6574 7.49991L15.3036 7.14636L13.0001 4.8445V4.49049L13.03 4.52031L15.48 6.96948L15.8333 7.32272L16.1868 6.96962L16.9302 6.22712L16.9304 6.22692C17.1377 6.01962 17.3021 5.77352 17.4143 5.50267C17.5265 5.23183 17.5842 4.94153 17.5842 4.64837C17.5842 4.3552 17.5265 4.06491 17.4143 3.79406C17.3021 3.52321 17.1377 3.27711 16.9304 3.06981C16.7231 2.86252 16.477 2.69808 16.2061 2.58589C15.9353 2.4737 15.645 2.41596 15.3518 2.41596C15.0586 2.41596 14.7683 2.4737 14.4975 2.58589C14.2266 2.69808 13.9805 2.86252 13.7732 3.06981Z" fill="white" stroke="white"/>
-                        </svg>
-                    </span>
-                    Edit
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="personal-info-data">
-        <div class="row">
-            <div class="col-md-4">
-                <h6>
-                    Full name
-                </h6>
-                <p>
-                    Beth Amarachi
-                </p>
-            </div>
-            <div class="col-md-8">
-                <h6>
-                    Email address
-                </h6>
-                <p>
-                    bethamarachi@gmail.com
-                </p>
-            </div>
-            <div class="col-md-4">
-                <h6>
-                    Gender
-                </h6>
-                <p>
-                    Female
-                </p>
-                <p>
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M10.0002 12.9166C10.3317 12.9166 10.6496 12.7849 10.884 12.5505C11.1185 12.3161 11.2502 11.9981 11.2502 11.6666C11.2502 11.3351 11.1185 11.0172 10.884 10.7827C10.6496 10.5483 10.3317 10.4166 10.0002 10.4166C9.66864 10.4166 9.3507 10.5483 9.11628 10.7827C8.88186 11.0172 8.75016 11.3351 8.75016 11.6666C8.75016 11.9981 8.88186 12.3161 9.11628 12.5505C9.3507 12.7849 9.66864 12.9166 10.0002 12.9166ZM6.66683 4.99996C6.66683 4.1159 7.01802 3.26806 7.64314 2.64294C8.26826 2.01782 9.11611 1.66663 10.0002 1.66663C10.8842 1.66663 11.7321 2.01782 12.3572 2.64294C12.9823 3.26806 13.3335 4.1159 13.3335 4.99996V5.83329H13.9585C14.6768 5.83329 15.3657 6.11863 15.8736 6.62654C16.3815 7.13446 16.6668 7.82333 16.6668 8.54163V14.7916C16.6668 15.5099 16.3815 16.1988 15.8736 16.7067C15.3657 17.2146 14.6768 17.5 13.9585 17.5H6.04183C5.32353 17.5 4.63466 17.2146 4.12675 16.7067C3.61884 16.1988 3.3335 15.5099 3.3335 14.7916V8.54163C3.3335 7.82333 3.61884 7.13446 4.12675 6.62654C4.63466 6.11863 5.32353 5.83329 6.04183 5.83329H6.66683V4.99996ZM10.0002 2.91663C9.44763 2.91663 8.91772 3.13612 8.52702 3.52682C8.13632 3.91752 7.91683 4.44742 7.91683 4.99996V5.83329H12.0835V4.99996C12.0835 4.44742 11.864 3.91752 11.4733 3.52682C11.0826 3.13612 10.5527 2.91663 10.0002 2.91663ZM6.04183 7.08329C5.65506 7.08329 5.28412 7.23694 5.01063 7.51043C4.73714 7.78392 4.5835 8.15485 4.5835 8.54163V14.7916C4.5835 15.5966 5.23683 16.25 6.04183 16.25H13.9585C14.3453 16.25 14.7162 16.0963 14.9897 15.8228C15.2632 15.5493 15.4168 15.1784 15.4168 14.7916V8.54163C15.4168 8.15485 15.2632 7.78392 14.9897 7.51043C14.7162 7.23694 14.3453 7.08329 13.9585 7.08329H6.04183Z" fill="#384747" stroke="#384747" stroke-width="0.4"/>
-                        </svg>
-                    </span>
-                    Only visible to you
-                </p>
-            </div>
-            <div class="col-md-4">
-                <h6>
-                    Country of residence
-                </h6>
-                <p>
-                    Nigeria
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path d="M0 0H5.87109L8.89453 1.44844L12.1289 0H18V18H12.1289L9.03867 16.5445L5.87109 18H0V0Z" fill="#6DA544"/>
-                            <path d="M5.87109 0H12.1289V18H5.87109V0Z" fill="#EEEEEE"/>
-                        </svg>
-                    </span>
-                </p>
-            </div>
-            <div class="col-md-4">
-                <h6>
-                    Phone number
-                </h6>
-                <p>
-                    +234-9283924450
-                </p>
-            </div>
-            <div class="col-md-12">
-                <h6>
-                    About me
-                </h6>
-                <p>
-                    I am a DevOps and Big Data engineer with 4 years experience and in-depth knowledge of R, Python, PowerBI and Tableau.
-                    I have an Msc. in Statistics and a big part of my career has been spent working at Jumia Nigeria, working as a BI Analyst and later a Commercial Planning Analyst.
-                </p>
-            </div>
-        </div>
-    </div>
+    <DefaultPersonalInfo v-if="!showEditForm" @edit-button-clicked="handleEditButtonClicked" :user-profile-info="userProfileInfo" />
+    <EditPersonalInfo v-if="showEditForm" @save-button-clicked="handleSaveButtonClicked" @cancel-button-clicked="handleCancelButtonClicked" :user-profile-info="userProfileInfo" />
 </template>

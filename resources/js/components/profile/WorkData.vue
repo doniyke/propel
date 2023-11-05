@@ -1,6 +1,27 @@
 <script setup>
-    import { ref } from 'vue';
+    import { ref, defineEmits } from 'vue';
     const showBtn = ref(false)
+    
+    const emit = defineEmits(['edit-button-clicked']);
+
+    const data = {
+        jobTitle: "Software Engineer II, Mobile",
+        companyName: "First Bank",
+        companyWebsite: "wwww.firstbank.com",
+        location: "Nigeria",
+        state: "Lagos",
+        startDate: "12/2021",
+        endDate: "04/2022",
+        currentlyWorkThere: false,
+        accomplisments: `Extracted, analyzed, and interpreted data on key metrics, into meaningful and actional information using MS Excel, R and SQL to be proactive and give insight into nationwide stations backlogs, efficiency and overall business performance. Collaborated with various stakeholders to develop and implement various KPIs and SLAs to improve overall business performance. Extracted, analyzed, and interpreted data on key metrics, into meaningful and actional information using MS Excel, R and SQL to be proactive and give insight into nationwide stations backlogs, efficiency and overall business performance. Collaborated with various stakeholders to develop and implement various KPIs and SLAs to improve overall business performance.
+        `
+    }
+
+
+    const editButtonClicked = () => {
+        emit('edit-button-clicked', data);
+    }
+
 </script>
 <template>
     <div class="experience" @mouseenter="showBtn = true" @mouseleave="showBtn = false">

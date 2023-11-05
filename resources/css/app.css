@@ -316,7 +316,94 @@ ul.progress-bar li::after {
     width: 2px;
     height: 100vh;
 }
+h5.modal-title {
+    color: #384747;
+    font-family: 'Inter';
+    font-size: 24px !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 28.8px */
+    letter-spacing: -0.24px;
+}
+div.modal div.modal-header {
+    margin-bottom: 40px !important;
+}
+div.modal button.btn-close {
+    width: 24px;
+    height: 24px;
+}
+div.modal div.modal-body form > div {
+    margin-bottom: 40px;
+}
+div.modal div.modal-body form label {
+    color: #000;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.14px;
+}
+div.modal .btn-cancel-footer {
+    border-radius: 12px;
+    border: 1px solid #FFF;
+    background: #F9F7F5;
+    color: #384747;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.16px;
+    padding: 12px;
+}
+div.modal .btn-save-footer {
+    color: #0045F6;
+    font-family: 'Inter';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.16px;
+    padding: 12px !important;
+    border-radius: 12px;
+    border: 1px solid #0045F6;
+    background-color: #fff;
+    margin-right: 10px;
+}
+.btn-save-dark-footer {
+    border-radius: 12px !important;
+    background: #0045F6 !important;
+    color: #FFF !important;
+    font-family: 'Inter';
+    font-size: 12px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    box-shadow: 0px 8px 8px 0px rgba(0, 207, 255, 0.15), 0px -1px 4px 0px rgba(0, 207, 255, 0.15);
+    padding: 12px !important;
+}
 
+span.check-content {
+    color: #384747;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 25.6px */
+    letter-spacing: 0.16px;
+    margin-left: 10px;
+}
+p.form-accomplish-text {
+    color: #384747;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 165%; /* 23.1px */
+    letter-spacing: 0.14px;
+}
 @media screen and (max-width: 768px) {
     .hide-sm {
         display: none;
