@@ -59,7 +59,7 @@ const handleEditButtonClicked = (data) => {
             </div>
         </div>
         <div class="work-info">
-            <WorkData @edit-button-clicked="handleEditButtonClicked" />
+            <WorkData @edit-button-clicked="handleEditButtonClicked" v-for="i in 3" />
         </div>
 
         <!-- Modal -->

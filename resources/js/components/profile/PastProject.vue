@@ -52,7 +52,7 @@ const handleEditButtonClicked = (data) => {
     </div>
     <div class="projects">
         <div class="row">
-            <Project @edit-button-clicked="handleEditButtonClicked" />
+            <Project @edit-button-clicked="handleEditButtonClicked" v-for="i in 4" />
         </div>
     </div>
      <!-- Modal -->
