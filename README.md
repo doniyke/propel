@@ -1,3 +1,41 @@
+# Propel
+
+
+# Setup on Local Device
+>To setup project on your local device for test run, please follow the process below
+>1. Clone or Download project repository into your local system via cli/terminal or any of the avialable github options
+>2. Navigate to project cloned directory on your local system from your termimal
+>3. Install laravel vendor files by running `composer install` (Make sure you have composer installed to run this command)
+>4. Install npm packages for the by running `npm install` (you need a node version of 16.0 or higher)
+>5. run the command `php artisan serve` to start the laravel server 
+>6. Open a new terminal and run the command `npm run dev` to start the node server for vue
+>7. Open the url running the laravel server in your browser mostly [http://127.0.0.1:8080](http://127.0.0.1:8080)
+
+>>Install Project Dependencies (Note : recommended Node version is node.js- v16.10.0 or newer)
+
+```bash
+# Install Laravel Dependencies
+composer install
+
+#Install Vue Dependencies
+npm install 
+
+#Start Larvel Server
+php artisan serve
+
+#Start Node Dev Server For Vue
+npm run dev
+```
+
+
+# Deployed Link
+> Deployed To Heroku [https://propel-test-4a1b0257790a.herokuapp.com/](https://propel-test-4a1b0257790a.herokuapp.com/) .
+
+
+
+
+# Other Details
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -64,5 +102,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# propel
-Update readme here
+
