@@ -469,4 +469,21 @@ p.form-accomplish-text {
         border-bottom: 1px solid #F0F1F1;
         margin-bottom: 30px;
     }
+    
+    button.btn-save-footer {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    div.Neon input {
+        z-index: 999;
+        opacity: 0;
+        width: 100%;
+        height: 50px !important;
+        position: absolute;
+        right: 0px;
+        left: 0px;
+        margin-right: auto; 
+        margin-left: auto;
+    }
+    
 }

@@ -56,7 +56,7 @@ const handleEditButtonClicked = (data) => {
         </div>
     </div>
     <div class="work-info">
-        <EducationData @edit-button-clicked="handleEditButtonClicked" v-for="i in 3" />
+        <EducationData @edit-button-clicked="handleEditButtonClicked" v-for="i in 2" />
     </div>
 
     <!-- Modal -->
@@ -133,7 +133,7 @@ const handleEditButtonClicked = (data) => {
                     </div>
                     <div>
                         <button type="button" class="btn btn-sm btn-save-footer">Save and add another</button>
-                        <button type="button" class="btn btn-sm btn-save-dark-footer">Save work experience</button>
+                        <button type="button" class="btn btn-sm btn-save-dark-footer">Save education</button>
                     </div>
                 </div>
             </div>
