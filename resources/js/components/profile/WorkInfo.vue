@@ -22,7 +22,7 @@ const handleEditButtonClicked = () => {
 };
 
 const handleSaveButtonClicked = (data) => {
-    userProfileInfo = { ...userProfileInfo, ...data };
+    // userProfileInfo = { ...userProfileInfo, ...data };
     showEditForm.value = false;
 };
 

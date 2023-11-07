@@ -127,7 +127,7 @@ div.Neon input {
     z-index: 999;
     opacity: 0;
     width: 100%;
-    height: 200px;
+    height: 100px;
     position: absolute;
     right: 0px;
     left: 0px;

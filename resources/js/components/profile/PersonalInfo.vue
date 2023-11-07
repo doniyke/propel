@@ -20,7 +20,7 @@ const handleEditButtonClicked = () => {
 };
 
 const handleSaveButtonClicked = (data) => {
-    Object.assign(userProfileInfo, data);
+    // Object.assign(userProfileInfo, data);
     showEditForm.value = false;
 };
 
